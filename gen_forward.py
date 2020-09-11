@@ -15,7 +15,7 @@ if __name__ == '__main__':
 
     # Parse Arguments
     parser = argparse.ArgumentParser(description='TTS Generator')
-    parser.add_argument('--linenumber',type=str, default=1)
+    parser.add_argument('--linenumber',type=int, default=1)
     parser.add_argument('--input_text', '-i', type=str, help='[string] Type in something here and TTS will generate it!')
     parser.add_argument('--tts_weights', type=str, help='[string/path] Load in different FastSpeech weights')
     parser.add_argument('--save_attention', '-a', dest='save_attn', action='store_true', help='Save Attention Plots')
@@ -154,6 +154,7 @@ if __name__ == '__main__':
             v_type = 'wavernn_unbatched'
 
         if input_text:
+            print(str(args.linenumber))
             save_path = '/content/output/' + str(args.linenumber) + f'.wav'
         else:
             save_path = paths.forward_output/f'{i}_{v_type}_{tts_k}ko.wav'
