@@ -64,6 +64,7 @@ if __name__ == '__main__':
         overlap = args.overlap
 
     input_text = args.input_text
+    linenumber = str(args.linenumber)
     tts_weights = args.tts_weights
     save_attn = args.save_attn
 
@@ -155,7 +156,7 @@ if __name__ == '__main__':
 
         if input_text:
             print(str(args.linenumber))
-            save_path = '/content/output/' + str(args.linenumber) + f'.wav'
+            save_path = '/content/output/' + linenumber + '.wav'
         else:
             save_path = paths.forward_output/f'{i}_{v_type}_{tts_k}ko.wav'
 
