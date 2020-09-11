@@ -154,7 +154,7 @@ if __name__ == '__main__':
             v_type = 'wavernn_unbatched'
 
         if input_text:
-            save_path = '/content/output/' + linenumber + f'.wav'
+            save_path = '/content/output/' + args.linenumber + f'.wav'
         else:
             save_path = paths.forward_output/f'{i}_{v_type}_{tts_k}ko.wav'
 
